@@ -1,0 +1,35 @@
+.candidate {
+    padding-top: 20px;
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.candidate__container {
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 20px;
+}
+
+.candidate__container > form > h1 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.candidate__container > form > .form-group > input {
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: white;
+    width: 98%;
+}
+
+.candidate__buttons{
+    max-width: fit-content;
+    align-self: center;
+}

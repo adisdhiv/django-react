@@ -1,0 +1,31 @@
+.header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #131921;
+    position: sticky;
+    justify-content: center;
+    top:0;
+    z-index: 100;
+}
+
+.header__nav{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.header__optionone{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.link {
+    color: #FFF;
+  }
+  .link:hover {
+     color: #00F
+  }
