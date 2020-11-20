@@ -1,0 +1,39 @@
+{% extends 'interview/main.html' %}
+
+{% block content %}
+
+<br>
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Interviewers</h5>
+				</div>
+				<div class="card card-body">
+                <a class="btn btn-primary  btn-sm btn-block" href="{% url 'createinterviewer' %}">Create Interviewer</a>
+					<table class="table">
+						<tr>
+							<th>Name</th>
+							<th>Phone</th>
+							<th>Email</th>
+                            <th>SAP id</th>
+						</tr>
+						{% for i in interviewers %}
+							<tr>
+								<td>{{i.name}}</td>
+								<td>{{i.phone}}</td>
+								<td>{{i.email}}</td>
+                                <td>{{i.sapid}}</td>
+                                <td><a href = "{% url 'updateinterviewer' i.id %}" class = "btn btn-sm btn-info">Update</a></td>
+					            <td><a href = "{% url 'deleteinterviewer' i.id %}" class = "btn btn-sm btn-danger">Delete</a></td>
+							</tr>
+						
+						{% endfor %}
+						
+						
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock %}

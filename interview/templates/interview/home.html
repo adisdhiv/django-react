@@ -1,0 +1,48 @@
+{%  extends 'interview/main.html' %}
+
+{% block content %}
+
+{%  include 'interview/status.html' %}
+
+<br>
+
+<div class="row">
+	<div class="container">
+		<h5>SCHEDULES:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'createschedule' %}">Create Schedule</a>
+			<table class="table table-sm">
+				<tr>
+					<th>Candidate</th>
+					<th>Interview Panel</th>
+                    <th>Position</th>
+                    <th>Interview Date</th>
+                    <th>Interview Time</th>
+                    <th>Interview Name</th>
+                    <th>Interview Type</th>
+                    <th>Status</th>
+                    <th>Remarks</th>
+				</tr>
+				{% for i in schedule %}
+				<tr>
+					<td>{{i.candidate}}</td>
+					<td>{{i.ipanel}}</td>
+                    <td>{{i.position}}</td>
+                    <td>{{i.interviewdate}}</td>
+                    <td>{{i.interviewtime}}</td>
+                    <td>{{i.interviewname}}</td>
+                    <td>{{i.interviewtype}}</td>
+                    <td>{{i.status}}</td>
+                    <td>{{i.remarks}}</td>
+                    <td><a href = "{% url 'updateschedule' i.id %}" class = "btn btn-sm btn-info">Update</a></td>
+					<td><a href = "{% url 'deleteschedule' i.id %}" class = "btn btn-sm btn-danger">Delete</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}
